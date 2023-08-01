@@ -60,7 +60,6 @@ app.post("/addData", async (req, res) => {
       const collection = db.collection("friends"); // Replace "users" with your collection name
 
       const result = await collection.insertOne(req.body);
-      console.log("Data added to MongoDB:", result.ops);
 
       res.status(200).json({ message: "Data added successfully" });
     } catch (err) {
@@ -127,3 +126,6 @@ app.delete("/deleteBy/:id", async (req, res) => {
 app.listen(8080,()=>{
     console.log("loading express.....")
 })
+
+
+module.exports = app;
